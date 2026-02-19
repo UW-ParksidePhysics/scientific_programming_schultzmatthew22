@@ -1,1 +1,18 @@
-
+(venv) root@deepnote:~/work # pwd
+/root/work
+(venv) root@deepnote:~/work # ls
+scientific_programming_schultzmatthew22
+(venv) root@deepnote:~/work # cd scientific_programming_schultzmatthew22/
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # pwd
+/root/work/scientific_programming_schultzmatthew22
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # cd /root/work
+(venv) root@deepnote:~/work # pwd
+/root/work
+(venv) root@deepnote:~/work # cd scientific_programming_schultzmatthew22/
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # pwd
+/root/work/scientific_programming_schultzmatthew22
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # ls
+command-line  deepnote_check.txt  python  README.md
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # cd /root/work
+(venv) root@deepnote:~/work # pwd
+/root/work
