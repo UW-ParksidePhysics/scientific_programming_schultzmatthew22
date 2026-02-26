@@ -10,8 +10,8 @@ feet = inches / inches_per_foot
 yards = feet / feet_per_yard
 miles = yards / yards_per_mile
 
-print(f"{km_from_college} km")
-print(f"Inches: {inches}, Feet: {feet}, Yards: {yards}, Miles: {miles}")
+print(f"Distance from campus: {km_from_college} km")
+print(f"Inches: {inches:.3f}, Feet: {feet:.3f}, Yards: {yards:.3f}, Miles: {miles:.3f}")
 print("-" * 30)
 
 test_km = 0.640
@@ -20,9 +20,9 @@ test_feet = test_inches / inches_per_foot
 test_yards = test_feet / feet_per_yard
 test_miles = test_yards / yards_per_mile
 
-print(f"{test_km} km")
-print(f"{test_inches} inches")
-print(f"{test_feet} feet")
-print(f"{test_yards} yards")
-print(f"{test_miles} miles")
+print(f"Test Distance: {test_km} km")
+print(f"Inches: {test_inches:.3f} inches, "
+      f"Feet: {test_feet:.3f} feet, "
+      f"Yards: {test_yards:.3f} yards, "
+      f"Miles: {test_miles:.3f} miles")
 
