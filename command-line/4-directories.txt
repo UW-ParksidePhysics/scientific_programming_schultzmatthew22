@@ -1,1 +1,94 @@
+(venv) root@deepnote:~/work # ls
+ -   Documents  'File_Create&Edit'   lesson4-practice   p   Scientific_Programming_Austin_Jakes
+(venv) root@deepnote:~/work # mkdir lesson4-practice
+mkdir: cannot create directory ‘lesson4-practice’: File exists
+(venv) root@deepnote:~/work # cd lesson-4practice
+bash: cd: lesson-4practice: No such file or directory
+(venv) root@deepnote:~/work # mkdir - lesson4-practice/date/2026
+mkdir: cannot create directory ‘-’: File exists
+mkdir: cannot create directory ‘lesson4-practice/date/2026’: No such file or directory
+(venv) root@deepnote:~/work # cd Scientific_Programming_Austin_Jakes/
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # ls
+command-line  python  README.md
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # find lesson4-practice -type d
+find: ‘lesson4-practice’: No such file or directory
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # rmdir lesson4-practice
+rmdir: failed to remove 'lesson4-practice': No such file or directory
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # mkdir - lesson4-practice
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # mkdir lesson4-practice
+mkdir: cannot create directory ‘lesson4-practice’: File exists
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # ls
+-  command-line  lesson4-practice  python  README.md
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # rmdir -
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # ls
+command-line  lesson4-practice  python  README.md
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # ls
+command-line  lesson4-practice  python  README.md
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # mkdir -p lesson4-practice/date/2026
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # ls
+command-line  lesson4-practice  python  README.md
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # ls lesson4-practice/
+date
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # cd lesson4-practice/
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes/lesson4-practice # mkdir -p lesson4-practie/date/2026
+ls
+cd Scientific_(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes/lesson4-practice # ls
+Pdate  lesson4-practie
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes/lesson4-practice # cd Scientific_Programming_Austin_Jakes
+bash: cd: Scientific_Programming_Austin_Jakes: No such file or directory
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes/lesson4-practice # ls
+date  lesson4-practie
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes/lesson4-practice # cd ..
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # find lesson4-practice - type d
+lesson4-practice
+lesson4-practice/date
+lesson4-practice/date/2026
+find lesson4-lesson4-practice/lesson4-practie
+lesson4-practice/lesson4-practie/date
+lesson4-practice/lesson4-practie/date/2026
+find: ‘-’: No such file or directory
+find: ‘type’: No such file or directory
+find: ‘d’: No such file or directory
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # find lesson4-practice -type d
+lesson4-practice
+lesson4-practice/date
+lesson4-practice/date/2026
+lesson4-practice/lesson4-practie
+lesson4-practice/lesson4-practie/date
+lesson4-practice/lesson4-practie/date/2026
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # rmdir -r lesson4-practice/date/2026
+rmdir: invalid option -- 'r'
+Try 'rmdir --help' for more information.
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # rmdir lesson4-practice/date/2026
+rm -r lesson4-practice/
 
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # rm -r lesson4-practice/
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # 
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # ls
+
+## Challenge
+(venv) root@deepnote:~/work # ls
+ -   Documents  'File_Create&Edit'   lesson4-practice   p   Scientific_Programming_Austin_Jakes
+(venv) root@deepnote:~/work # cd Scientific_Programming_Austin_Jakes/
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # mkdir projects
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # cd projects
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes/projects # mkdir -p projects/frontend projects/backend projects/database
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes/projects # ls
+projects
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes/projects # find lesson4-practice -type d
+find projectfind: ‘lesson4-practice’: No such file or directory
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes/projects # find projects -type d
+projects
+projects/backend
+projects/database
+projects/frontend
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes/projects # rm -r projects
+ls(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes/projects # ls
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes/projects # cd ..
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # ls
+rm - pcommand-line  projects    python  README.md
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # rm -r projects
+ls
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # ls
+command-line  python  README.md
+(venv) root@deepnote:~/work/Scientific_Programming_Austin_Jakes # 
