@@ -1,17 +1,17 @@
-Partner:
+Partner: Austin
 
 What Went Well
 ---
-
+Finished the assignment and terminal was quicker. Challenge was completed smoothly.
 
 What Would Make Next Time 1% Better
 ---
-* Focus:
+* Focus: 10/10
 
-* Communication:
+* Communication: 10/10
 
-* Pacing:
+* Pacing: 10/10
 
-* Division of responsibility
+* Division of responsibility: Equally distributed
 
-* Code quality:
+* Code quality: 95%
