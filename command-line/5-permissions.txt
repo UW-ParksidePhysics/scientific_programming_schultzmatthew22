@@ -1,1 +1,84 @@
-
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # ls
+10-CONCEPTS.md     1-introduction.txt  2-editing.txt     3-files.txt       4-directories.txt  5-mini-retro.txt   6-mini-retro.txt  7-mini-retro.txt  8-mini-retro.txt   9-mini-retro.txt
+10-mini-retro.txt  1-mini-retro.txt    2-mini-retro.txt  3-mini-retro.txt  4-mini-retro.txt   5-permissions.txt  6-searching.txt   7-processes.txt   8-redirection.txt  9-vi.txt
+1-CONCEPTS.md      2-CONCEPTS.md       3-CONCEPTS.md     4-CONCEPTS.md     5-CONCEPTS.md      6-CONCEPTS.md      7-CONCEPTS.md     8-CONCEPTS.md     9-CONCEPTS.md
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # mkdir Documents
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # ls
+10-CONCEPTS.md     1-introduction.txt  2-editing.txt     3-files.txt       4-directories.txt  5-mini-retro.txt   6-mini-retro.txt  7-mini-retro.txt  8-mini-retro.txt   9-mini-retro.txt
+10-mini-retro.txt  1-mini-retro.txt    2-mini-retro.txt  3-mini-retro.txt  4-mini-retro.txt   5-permissions.txt  6-searching.txt   7-processes.txt   8-redirection.txt  9-vi.txt
+1-CONCEPTS.md      2-CONCEPTS.md       3-CONCEPTS.md     4-CONCEPTS.md     5-CONCEPTS.md      6-CONCEPTS.md      7-CONCEPTS.md     8-CONCEPTS.md     9-CONCEPTS.md      Documents
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # cd Documents/
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # touch notes.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ls -l notes.txt
+-rw-r--r--. 1 root users 0 Mar 10 10:38 notes.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # chmod u+x notes.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # chmod o-r notes.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ls -l notes.txt
+-rwxr-----. 1 root users 0 Mar 10 10:38 notes.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # rm notes.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ls
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # touch script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ls
+script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # rm script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ls
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # echo '#!/bin/sh\necho "Hello, world!"' > script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ./script.sh
+bash: ./script.sh: /bin/sh\necho: bad interpreter: Permission denied
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # chmod 755 script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # chown Matthew script.sh
+chown: invalid user: ‘Matthew’
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # chown user script.sh
+chown: invalid user: ‘user’
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # whoami
+root
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # chown work script.sh
+chown: invalid user: ‘work’
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # chown root script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ls -l script.sh
+-rwxr-xr-x. 1 root users 32 Mar 10 10:40 script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ./script.sh 
+bash: ./script.sh: cannot execute: required file not found
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ls
+script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # .script.sh
+bash: .script.sh: command not found
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # rm -r script.sh 
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ls
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # echo '#!/bin/sh\necho "Hello, world!"' > script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ./script.sh
+bash: ./script.sh: /bin/sh\necho: bad interpreter: Permission denied
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # chmod 755 script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # chown root script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ls -l script.sh
+-rwxr-xr-x. 1 root users 32 Mar 10 11:05 script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ./script.sh
+bash: ./script.sh: cannot execute: required file not found
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # users
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # w
+ 11:06:40 up 36 days, 12:08,  0 user,  load average: 5.72, 8.33, 7.51
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # rm -r script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ^C
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # echo '#!/bin/sh\necho "Hello, world!"' > script.sh
+./(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ./script.sh
+bash: ./script.sh: /bin/sh\necho: bad interpreter: Permission denied
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # chmod 755 script.sh 
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ls -l script.sh 
+-rwxr-xr-x. 1 root users 32 Mar 10 11:07 script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ./script.sh 
+bash: ./script.sh: cannot execute: required file not found
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ls
+script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # rm -r script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # echo '#!/bin/sh\necho "Hello, world!"' > script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ./script.sh 
+bash: ./script.sh: /bin/sh\necho: bad interpreter: Permission denied
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # sudo chown new_user script.sh 
+chown: invalid user: ‘new_user’
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # sudo chown root script.sh 
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # chmod 755 script.sh
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ./script.sh 
+bash: ./script.sh: cannot execute: required file not found
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # rm -r script.sh 
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/Documents # ls

@@ -1,17 +1,17 @@
-Partner:
+Partner: No Partner
 
 What Went Well
----
+--- The practice section went well for me
 
 
 What Would Make Next Time 1% Better
 ---
-* Focus:
+* Focus: Staying focused on the assignemnt would help me more
 
-* Communication:
+* Communication: Being in person to communicate questions would help
 
-* Pacing:
+* Pacing: Pacing was done well
 
-* Division of responsibility
+* Division of responsibility: Would be better with Partner
 
-* Code quality:
+* Code quality: Could not get ./script.sh to actually run after several attempts. Practice section was done well.

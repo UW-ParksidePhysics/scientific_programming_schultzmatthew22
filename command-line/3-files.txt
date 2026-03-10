@@ -1,1 +1,46 @@
 
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # ls
+command-line  deepnote_check.txt  notes.txt  python  README.md  shipping_list.txt  shopping_list.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # cd command-line
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # cp 3-files.txt backup_files.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # ls
+10-CONCEPTS.md     1-introduction.txt  2-editing.txt     3-files.txt       4-directories.txt  5-mini-retro.txt   6-mini-retro.txt  7-mini-retro.txt  8-mini-retro.txt   9-mini-retro.txt
+10-mini-retro.txt  1-mini-retro.txt    2-mini-retro.txt  3-mini-retro.txt  4-mini-retro.txt   5-permissions.txt  6-searching.txt   7-processes.txt   8-redirection.txt  9-vi.txt
+1-CONCEPTS.md      2-CONCEPTS.md       3-CONCEPTS.md     4-CONCEPTS.md     5-CONCEPTS.md      6-CONCEPTS.md      7-CONCEPTS.md     8-CONCEPTS.md     9-CONCEPTS.md      backup_files.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # mv backup_files.txt renamed_files.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # ls
+10-CONCEPTS.md     1-introduction.txt  2-editing.txt     3-files.txt       4-directories.txt  5-mini-retro.txt   6-mini-retro.txt  7-mini-retro.txt  8-mini-retro.txt   9-mini-retro.txt
+10-mini-retro.txt  1-mini-retro.txt    2-mini-retro.txt  3-mini-retro.txt  4-mini-retro.txt   5-permissions.txt  6-searching.txt   7-processes.txt   8-redirection.txt  9-vi.txt
+1-CONCEPTS.md      2-CONCEPTS.md       3-CONCEPTS.md     4-CONCEPTS.md     5-CONCEPTS.md      6-CONCEPTS.md      7-CONCEPTS.md     8-CONCEPTS.md     9-CONCEPTS.md      renamed_files.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # rm renamed_files.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # ls
+10-CONCEPTS.md     1-introduction.txt  2-editing.txt     3-files.txt       4-directories.txt  5-mini-retro.txt   6-mini-retro.txt  7-mini-retro.txt  8-mini-retro.txt   9-mini-retro.txt
+10-mini-retro.txt  1-mini-retro.txt    2-mini-retro.txt  3-mini-retro.txt  4-mini-retro.txt   5-permissions.txt  6-searching.txt   7-processes.txt   8-redirection.txt  9-vi.txt
+1-CONCEPTS.md      2-CONCEPTS.md       3-CONCEPTS.md     4-CONCEPTS.md     5-CONCEPTS.md      6-CONCEPTS.md      7-CONCEPTS.md     8-CONCEPTS.md     9-CONCEPTS.md
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # mkdir practice_directory
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # touch shopping_list.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # mv shopping_list.txt practice_directory
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # mv shopping_list.txt practice_directory/
+mv: cannot stat 'shopping_list.txt': No such file or directory
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # ls
+10-CONCEPTS.md     1-introduction.txt  2-editing.txt     3-files.txt       4-directories.txt  5-mini-retro.txt   6-mini-retro.txt  7-mini-retro.txt  8-mini-retro.txt   9-mini-retro.txt
+10-mini-retro.txt  1-mini-retro.txt    2-mini-retro.txt  3-mini-retro.txt  4-mini-retro.txt   5-permissions.txt  6-searching.txt   7-processes.txt   8-redirection.txt  9-vi.txt
+1-CONCEPTS.md      2-CONCEPTS.md       3-CONCEPTS.md     4-CONCEPTS.md     5-CONCEPTS.md      6-CONCEPTS.md      7-CONCEPTS.md     8-CONCEPTS.md     9-CONCEPTS.md      practice_directory
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # cd practice_directory/
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/practice_directory # cd scietific_programming_schultzmatthew22
+bash: cd: scietific_programming_schultzmatthew22: No such file or directory
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/practice_directory # cd scietific_programming_schultzmatthew22/
+bash: cd: scietific_programming_schultzmatthew22/: No such file or directory
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line/practice_directory # cd ..
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # touch shopping_list.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # ls
+10-CONCEPTS.md     1-introduction.txt  2-editing.txt     3-files.txt       4-directories.txt  5-mini-retro.txt   6-mini-retro.txt  7-mini-retro.txt  8-mini-retro.txt   9-mini-retro.txt    shopping_list.txt
+10-mini-retro.txt  1-mini-retro.txt    2-mini-retro.txt  3-mini-retro.txt  4-mini-retro.txt   5-permissions.txt  6-searching.txt   7-processes.txt   8-redirection.txt  9-vi.txt
+1-CONCEPTS.md      2-CONCEPTS.md       3-CONCEPTS.md     4-CONCEPTS.md     5-CONCEPTS.md      6-CONCEPTS.md      7-CONCEPTS.md     8-CONCEPTS.md     9-CONCEPTS.md      practice_directory
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # rm shipping_list.txt
+rm: cannot remove 'shipping_list.txt': No such file or directory
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # mv shopping_list.txt practice_directory/
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # ls -R practice_directory/
+practice_directory/:
+shopping_list.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/command-line # rm -r practice_directory/
