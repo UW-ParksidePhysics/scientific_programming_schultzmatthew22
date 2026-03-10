@@ -1,1 +1,17 @@
+(venv) root@deepnote:~/work # pwd
+/root/work
+(venv) root@deepnote:~/work # cd scientific_programming_schultzmatthew22/
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # touch notes.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # vi notes.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # cat notes.txt
+This is my first file created in the terminal.
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # touch shopping_list.tx
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # touch shipping_list.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # vi shopping_list.txt
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # cat shopping_list.txt
+apples
+bread
+milk
+coffee
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # 
 

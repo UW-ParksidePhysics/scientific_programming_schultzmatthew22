@@ -1,17 +1,17 @@
-Partner:
+Partner: No one
 
 What Went Well
----
-
+--- 
+Was easy to understand and complete assignment
 
 What Would Make Next Time 1% Better
 ---
-* Focus:
+* Focus: Focus was good
 
-* Communication:
+* Communication: The assignment was understood well
 
-* Pacing:
+* Pacing: Pacing worked great for me
 
-* Division of responsibility
+* Division of responsibility: Would have been better with a partner
 
-* Code quality:
+* Code quality: Slight mistypes resulted in having to repeat steps
