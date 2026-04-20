@@ -1,17 +1,17 @@
-Partner:
+Partner: No one
 
 What Went Well
 ---
-
+The practice section of the assignment went well
 
 What Would Make Next Time 1% Better
 ---
-* Focus:
+* Focus: Paying attention to what I have already done would make it easier
 
-* Communication:
+* Communication: Assignemtn was clear
 
-* Pacing:
+* Pacing: I didn't pace myself well and made mistakes due to it
 
-* Division of responsibility
+* Division of responsibility: Would have been better with a partner
 
-* Code quality:
+* Code quality: Few mistakes due to mispelling

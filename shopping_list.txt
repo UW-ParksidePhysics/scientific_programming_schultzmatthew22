@@ -1,5 +1,4 @@
 apples
 bread
 milk
-coffe
-
+coffee
