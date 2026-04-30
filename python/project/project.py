@@ -108,3 +108,120 @@
 # 4) Return results (arrays, figure objects) instead of printing everything
 #
 # Keep plotting separate from physics/math wherever practical.
+
+import turtle
+
+import matplotlib.pyplot as plt
+
+# Constants
+R_KM = {
+    "Mercury": 2440,
+    "Venus": 6052,
+    "Earth": 6371,
+    "Mars": 3390,
+    "Jupiter": 69911,
+    "Saturn": 58232,
+    "Uranus": 25362,
+    "Neptune": 24622,
+}
+
+DESIRED_MAX_DIAMETER_MM = 220
+K = DESIRED_MAX_DIAMETER_MM / (2 * R_KM["Jupiter"])
+
+
+def generate_data_matrix():
+    data_matrix = []
+    current_x = -550.0
+    y_pos = 0.0
+    buffer = 45
+
+    planet_names = list(R_KM.keys())
+
+    for i, name in enumerate(planet_names):
+        r_km = R_KM[name]
+        r_scaled_mm = r_km * K
+
+        if i == 0:
+            x_pos = current_x + r_scaled_mm
+        else:
+            prev_r = data_matrix[i - 1][1]
+            prev_x = data_matrix[i - 1][2]
+
+            min_center_dist = r_scaled_mm + prev_r + buffer
+            x_pos = prev_x + min_center_dist
+
+        data_matrix.append([name, r_scaled_mm, x_pos, y_pos, r_km])
+
+    return data_matrix
+
+
+def show_comparison_graphs(matrix):
+    names = [row[0] for row in matrix]
+    r_km = [row[4] for row in matrix]
+    r_mm = [row[1] for row in matrix]
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+    ax1.bar(names, r_km, color='#1565C0')
+    ax1.set_title("Radius in km")
+
+    ax2.bar(names, r_mm, color='#C62828')
+    ax2.set_title("Radius in mm (Scaled)")
+
+    plt.tight_layout()
+    plt.show(block=False)
+    plt.pause(0.1)
+
+
+def draw_turtle_stencil(matrix):
+    screen = turtle.Screen()
+    screen.setup(width=1300, height=700)
+    screen.bgcolor("white")
+
+    t = turtle.Turtle()
+    t.speed(0)
+    t.penup()
+
+    colors = [
+        "#9E9E9E", "#E3BB76", "#2E7D32", "#D32F2F",
+        "#EF6C00", "#F4E0AF", "#4DD0E1", "#1565C0"
+    ]
+
+    for i, row in enumerate(matrix):
+        name, r_mm, x, y, r_km = row
+
+        t.goto(x, y - r_mm)
+        t.pendown()
+        t.color(colors[i])
+        t.begin_fill()
+        t.circle(r_mm)
+        t.end_fill()
+        t.penup()
+
+        label_y = y + r_mm + (20 if i % 2 == 0 else 80)
+        t.goto(x, label_y)
+        t.color("black")
+        t.pendown()
+        t.goto(x, y + r_mm + 2)
+        t.penup()
+        t.goto(x, label_y)
+
+        # Wrapped string variables to adhere to line-length limits
+        label_text = f"{name}\nReal: {int(r_km):,} km\nStencil: {r_mm:.2f} mm"
+        t.write(
+            label_text,
+            align="center",
+            font=("Arial", 8, "bold")
+        )
+
+    t.hideturtle()
+    print("Stencil Complete. You can close the Plot and the Turtle window.")
+    turtle.done()
+
+
+if __name__ == "__main__":
+    matrix = generate_data_matrix()
+
+    turtle.getscreen()
+    show_comparison_graphs(matrix)
+    draw_turtle_stencil(matrix)
