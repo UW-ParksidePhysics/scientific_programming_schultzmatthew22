@@ -1,1 +1,262 @@
-
+(venv) root@deepnote:~/work # cd scientific_programming_schultzmatthew22/
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # find . -name "ball.py"
+./python/3d_visualization/ball.py
+   
+        
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # 
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # 
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # cd python/3d_visualization/ball.py 
+bash: cd: python/3d_visualization/ball.py: Not a directory
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # ^C
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # cd python/3d_visualization
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/python/3d_visualization # grep "vpython" ball.py
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/python/3d_visualization # cd ../..
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # find . -mtime -3
+./.git/COMMIT_EDITMSG
+./.git/HEAD
+./.git/config
+./.git/description
+./.git/hooks/applypatch-msg.sample
+./.git/hooks/commit-msg.sample
+./.git/hooks/fsmonitor-watchman.sample
+./.git/hooks/post-update.sample
+./.git/hooks/pre-applypatch.sample
+./.git/hooks/pre-commit.sample
+./.git/hooks/pre-merge-commit.sample
+./.git/hooks/pre-push.sample
+./.git/hooks/pre-rebase.sample
+./.git/hooks/pre-receive.sample
+./.git/hooks/prepare-commit-msg.sample
+./.git/hooks/push-to-checkout.sample
+./.git/hooks/update.sample
+./.git/index
+./.git/info/exclude
+./.git/logs/HEAD
+./.git/logs/refs/heads/main
+./.git/logs/refs/remotes/origin/HEAD
+./.git/logs/refs/remotes/origin/main
+./.git/logs/refs/stash
+./.git/objects/02/146493dc7f83773c3200da182dd93e129ae30c
+./.git/objects/07/2b51d4f586fe7e0b362cbe39876243a9be0677
+./.git/objects/07/851d4bef825acd7c717956f11f3285fa4893e4
+./.git/objects/08/4ff7691163c5edb6333688ffa1fa822a9ee0f2
+./.git/objects/08/85fc3c48da2c5b8a8018cdee51231c96344df7
+./.git/objects/09/452c04091d12b0892aaab13d11728c97ffd0b8
+./.git/objects/11/2e15fcf4fd2e0436ea2a0f0346cbfe26129345
+./.git/objects/15/4105014bb8a3409fb68c86c349010fc0b980ed
+./.git/objects/16/312aed6d041d211469d3aaf988e83f75cf5410
+./.git/objects/1b/0ed2409f866f9dba665ee0e4050e72799881a0
+./.git/objects/1c/d3c65fe44fd67f1477c3330bd74441bc32a8bc
+./.git/objects/1d/4260661e35985a70d58b295b7b556a29820c52
+./.git/objects/1d/de8d497abe91be556113dcb51d29b2f87fc4ed
+./.git/objects/1e/95a45ec45938c96b0d8113795ae572ecbc33d6
+./.git/objects/20/1107301890edc79888e77fce388a989dc351a3
+./.git/objects/20/264c5f16e8e5f22c64b09ea8a470734409110b
+./.git/objects/20/50f85299744a3e771d8998d2f82e4372197872
+./.git/objects/21/6965d7454189feaa636d61754e814f74055aad
+./.git/objects/2b/db05999fcf16b82f7638773211229ffc9b2c65
+./.git/objects/2d/d374100aa13f201f5aa8717b3e60773b54f5cc
+./.git/objects/2e/95d9ed08f720f2fe22a727ad7f8af9f6450647
+./.git/objects/32/b32252623343c2f7d5ca10bd71589aa2cab1d1
+./.git/objects/33/82b5d338f830745aa7fd856105723ae1c11279
+./.git/objects/37/067f33fea1a648dab0459c5d69142a2550ca37
+./.git/objects/37/1e619b9b83bded585be38b3bf5f07f351eb049
+./.git/objects/39/1ff8fed8c2ff4120b4ce4ee5d90953908595f2
+./.git/objects/3a/0bde1ca0423b0fb86ac5c0ff6e8f569ac6c2f0
+./.git/objects/3c/aeaec0676b7591440ef2f2853699eb3d0beb64
+./.git/objects/3d/17f9c9a5457fff50ff60cc985ea3519c47ef19
+./.git/objects/3d/fd942010f54b3bdc5777c52bfc1cd1c201f122
+./.git/objects/3e/97d24a18141c8de5c0e11462b6214f3e331d41
+./.git/objects/3e/d5864a47b12fe5548ff154595ecd9878fed98e
+./.git/objects/42/0b36b31054b4300fdf3749d3e9f408f0f178d6
+./.git/objects/44/13d1e2a85c638f6f7c91bc39469eac4582b275
+./.git/objects/44/75dd88a00431f428c8ed505d0c3aedae028f8a
+./.git/objects/46/c47850605725a9834f402a8872d4a90b0eedb6
+./.git/objects/4b/2e89f4267c88a53d8503de3aa38c41e4b452b5
+./.git/objects/4b/825dc642cb6eb9a060e54bf8d69288fbee4904
+./.git/objects/4d/03dd34e73b386a405dd311110e6af7d035a350
+./.git/objects/4d/113aaa17baab28fa0a0c8a3505bc90d9c44c3c
+./.git/objects/4d/b40726ad03a4b238cc5443987bd8b3dcf09b8e
+./.git/objects/4d/da1541508d6e3388e289c9b9b44a43e45471c4
+./.git/objects/50/0a16221ba8f9ed01c6e0c1fbf46a16501ae2df
+./.git/objects/51/c8e3ca7b15c18de876f8e7348fa96af8a1c0c0
+./.git/objects/51/d62a6539fa591b0e1f2afeafffaebed44812fd
+./.git/objects/51/dda1405f097a5e184d43ffd10a951ce7992e38
+./.git/objects/56/286a4d2cd7286557ba9b02d0736eddaff22fad
+./.git/objects/56/3f69c992ba0dda715f0c62ca3ab4492d5fe24e
+./.git/objects/56/700edd0a796b7d1b73d093f93b10c0b209194b
+./.git/objects/56/d4ae2f15f0f3fa21753a53071f9ca7da886bff
+./.git/objects/5a/ff94c09f829ba9d9b5ade61c68fbb597fe3229
+./.git/objects/5b/1bd96cf03851e303191e3e366c4c3e8695100d
+./.git/objects/5b/28a8350b28529961c9c48e49ad49a87309fe39
+./.git/objects/60/43887eaff3844e5f0c151325273e406815660a
+./.git/objects/60/58859f2f935a635d0b904258081aa99a2fc43a
+./.git/objects/62/a885ad65b8a2ec36ee54ccb62065545a724974
+./.git/objects/62/e9b3b143781858ab0781ac04ef4f3aefa19dbb
+./.git/objects/62/fae34792442713a6db2bcb5c8391f0df3d6ba9
+./.git/objects/64/4bb26d23b988e00961d8d31c268dbbe4227807
+./.git/objects/67/7bde4f0d8cd502fde539e19ea87b8459db1377
+./.git/objects/6c/655f176833e62bcdc5a38c50c848482ac34270
+./.git/objects/6f/0f724449908f25a85d32e0bc7e598db07d01f1
+./.git/objects/70/ab404d16957ab668ccf5ce3747498b340b2b19
+./.git/objects/72/3fdb9ff83108aba99e9b6d99de588deefd4276
+./.git/objects/73/64bfc786a4514b2623fa1db62be6eac379a35f
+./.git/objects/74/1dc856004ddca0fe00fd2a3fb38d5c9a32575e
+./.git/objects/76/c12191d2a2b894c3aa8813f471f571405e9da7
+./.git/objects/79/2697a84c2fa3d4808fe4cf81067bc42d1345fe
+./.git/objects/7a/4b6ecb02d95433688bbad9bb693e87027c8ad6
+./.git/objects/7b/e1d705aa6dc25242cb62868e86b08aea715b1d
+./.git/objects/7c/c27d31c9b416be834d0d2ce2ace155051192d9
+./.git/objects/7d/3201b783ece4a50b6edeee552925f8eba5060c
+./.git/objects/81/14a3e82a0a839ab21f85e1aa2d35fc135b4a4d
+./.git/objects/81/383b8999314f86c3edd03dd3b7b40d0025ff7b
+./.git/objects/86/a93a06d22c767f6fd23e6fe57f37c0c70bac0b
+./.git/objects/86/b0991037fae57023ce23a9236d54a57d845a86
+./.git/objects/86/ebf90f725d378acb2a18dc13785500b37048c4
+./.git/objects/89/af77048f09309c53f7515b9bc4ea5b9d87d8e7
+./.git/objects/8e/ce68dba5066b144db7da0ec4cde9b8721e9b52
+./.git/objects/8f/180332395f12d2de018bea17160dd82507dd52
+./.git/objects/94/0f4d022268404cc6bad468b16075bae56cf678
+./.git/objects/94/ee0b441b9dc48a99b8af19795898a81f157eac
+./.git/objects/95/c55fcd5604d089417337f8036c8ef6f1d4303b
+./.git/objects/96/40e339c856ec69427386aed27bd59f33f04568
+./.git/objects/96/53a8cf43b642aba32a440c474d54ae4a6786ba
+./.git/objects/99/eaadaaf01b1c5bf87c4338b6709a43f2bcf3f3
+./.git/objects/9c/31937cf14f744c63cdc6e31858386c646f2ef0
+./.git/objects/a0/b6756d04ae4dc57b78de61550e230bf9b1dc04
+./.git/objects/a0/d6931ef6ee091602062e7ad641f9d744c35d19
+./.git/objects/a1/8c3e77fa53702563602541d6916596ff6eba63
+./.git/objects/a1/9786ac01c94738fae044198d7b418db06f4c64
+./.git/objects/a3/e47b9a3f139a27c090afee525ffae4256d0e0d
+./.git/objects/ab/99787bb2d740c322190d6efb2c3bca8dfa4ec2
+./.git/objects/ac/a4c10d9a644cfd1ec5410031d52cdc815adeee
+./.git/objects/ac/eae39f8ca1e71936c41206af4eab04f3104aa9
+./.git/objects/af/35d853995afb072e42564e44c11d3c8d3d1ff5
+./.git/objects/af/fc666807610d44cfde331d9a696c3c73d3f0a6
+./.git/objects/b4/bf07d70c6fe43f3699a47da2ba3c2133ba8974
+./.git/objects/b8/c04e2fa3a77cc548779340ced2ce7e7a59f129
+./.git/objects/b9/2e93d05eedb3d3d9608cd459793bf90e324af8
+./.git/objects/bd/e283dad4451233b3ec325599bc70ba733498f5
+./.git/objects/c0/179f654df4cb6d0a6b095ab1b9b122ec5d3d51
+./.git/objects/c0/6f979fe99accea4bba0e4ab309bbc7fe638415
+./.git/objects/c0/a2f0848f0dffbc7632bcf8cf327abefe1275a2
+./.git/objects/c1/2ac04cc63d1d20fb06f7ce147c7e79bff39971
+./.git/objects/c2/9c63895b95a55e73a49c30f0d95f40d6287cb6
+./.git/objects/c3/a8bbc42861cdc1177849bfd013cd4640ced24c
+./.git/objects/c6/9b8357e74e37b90993dab7baea0305dda46214
+./.git/objects/ca/f7a115f3f2c4ca18b6ac083d7770ce64375fa1
+./.git/objects/cb/773b5aaa94c23134a157332a85580bc4e3f909
+./.git/objects/ce/06f150a3ceb2a9f91e798db623241e2383490b
+./.git/objects/d1/44b75513895090092c157851f4a9e00bb03ae2
+./.git/objects/d3/91b491d3d5f5199f5b7d6faf2e72bef20769a6
+./.git/objects/d5/f937b80f04cada88d60112c5fdbb7b92c868a9
+./.git/objects/d6/fac1bf0a3137425230837713b95ba504d9b13e
+./.git/objects/d7/a12f0e5892f5f8af875953b313378367ce8327
+./.git/objects/d8/49fd2c1fbfa505e134b286ee462b92b451a747
+./.git/objects/da/be56babf5cd67671a3df1d024ffd32ec53a74c
+./.git/objects/dc/a5abf4a996e5a077512daa1e351296532a454d
+./.git/objects/e0/0bdae0087956b58a1f011314e7f0a73309a003
+./.git/objects/e1/6b10d97069f84b54e53d995fc1ca7ec543993f
+./.git/objects/e1/b40c601d07a6e4083ce2256b69945a9f184036
+./.git/objects/e1/fbcdf7b96a8b757e5e8292313f87c7a079ab93
+./.git/objects/e2/e9df25fa1230a7415577ba20321d75fcb3a0ed
+./.git/objects/e2/fe8aa32997af2a80dacd2d03622ee7f72ed4ab
+./.git/objects/e3/4536b2bf1b2b51144040c230509a1fd2fe0c74
+./.git/objects/e3/59c98406761ff0ad2c0c79c5cba7c697b0c25d
+./.git/objects/e4/3c9fe9f33cf892399684dcd4211f7cf8ba375d
+./.git/objects/e4/d98e06890e4f546be568d888e8a7c0e1e74a3c
+./.git/objects/ea/3e32cd6e10f95a852a40216e4fcad61e1baf61
+./.git/objects/ea/46287bb02fcbcb0d9d9362fb61f96083e8d935
+./.git/objects/eb/0ea542e1bbd28ba8fb902dfe91582c58ea28b5
+./.git/objects/ed/9dd41f1b2d0e56fec995973c880dbae8d5b5e8
+./.git/objects/ef/e1d1062e8b64f4f2cb38af2c4fd1900987e5a5
+./.git/objects/f1/f033ab2697df3dc589df7f068375b35b30377f
+./.git/objects/f3/64d4b74475b7fea45cd164494077dab432fc21
+./.git/objects/f4/6d6e9a1046cb2816027bd379b8149b749e56d3
+./.git/objects/f4/984861e33b7b44348e76a09549357ce51567c8
+./.git/objects/f4/a3796241597cf9b1b8b66e2618f8ac8b1bec7d
+./.git/objects/f4/b3b1d8cef4049beaaff8053bf0a7a3601fb302
+./.git/objects/f5/d736914f44caab734300d55a3c55d23cd42091
+./.git/objects/f7/80337e0387d5a41a7875967cdbaada4a70ac01
+./.git/objects/f8/0669fdc66b717efc8aaf14a5c712bca5bc3076
+./.git/objects/f8/4c31c198f637eebcef4eadfaa41cfb5d89bf7a
+./.git/objects/f9/1e8dbe1ed66547514c061aadd66cc3445a445f
+./.git/objects/fa/0ad6dccccc26b44e14059787d9017c87fe6157
+./.git/objects/fc/196410326dd5330b1ad260fa9d6219aaeb6cf1
+./.git/objects/fd/4ba53639a9cc4b0e28764eea79a11d90f86d7a
+./.git/objects/fe/46fad829415aaa5e54236f436a295a4b0a1775
+./.git/objects/ff/4b1de5d52fc284e5b6972bd197bc9129e12102
+./.git/objects/pack/pack-0adeec123e0c7e7d024f0c3660dd7bba460a3a99.idx
+./.git/objects/pack/pack-0adeec123e0c7e7d024f0c3660dd7bba460a3a99.pack
+./.git/objects/pack/pack-255d44e93018bbba63f7227c72cfc7bcc382dfb2.idx
+./.git/objects/pack/pack-255d44e93018bbba63f7227c72cfc7bcc382dfb2.pack
+./.git/objects/pack/pack-4bcc1d1d0779f4b4b5db83e61e97f77da52d12da.idx
+./.git/objects/pack/pack-4bcc1d1d0779f4b4b5db83e61e97f77da52d12da.pack
+./.git/objects/pack/pack-5cbf1c5762ed4a974b86fc6775f7a6c10b25bbf2.idx
+./.git/objects/pack/pack-5cbf1c5762ed4a974b86fc6775f7a6c10b25bbf2.pack
+./.git/objects/pack/pack-6b7980cc9ea3c61f4252b3c5a16778df8d582315.idx
+./.git/objects/pack/pack-6b7980cc9ea3c61f4252b3c5a16778df8d582315.pack
+./.git/objects/pack/pack-8d3fe47cd7bdc0dbe46251ccbf809234a9083d4a.idx
+./.git/objects/pack/pack-8d3fe47cd7bdc0dbe46251ccbf809234a9083d4a.pack
+./.git/objects/pack/pack-8d985504ac0f0f8523f0a9bfc0aa767d96594523.idx
+./.git/objects/pack/pack-8d985504ac0f0f8523f0a9bfc0aa767d96594523.pack
+./.git/objects/pack/pack-d32930a090dff4899523d0400c7c15793e16f94a.idx
+./.git/objects/pack/pack-d32930a090dff4899523d0400c7c15793e16f94a.pack
+./.git/objects/pack/pack-d7a16cf1e7a3747abcc42e9c92bda0efe7b988fc.idx
+./.git/objects/pack/pack-d7a16cf1e7a3747abcc42e9c92bda0efe7b988fc.pack
+./.git/objects/pack/pack-f14297286bfe50cc061caddb6699a75ac3187605.idx
+./.git/objects/pack/pack-f14297286bfe50cc061caddb6699a75ac3187605.pack
+./.git/objects/pack/pack-f8030eae927882d74c92e9ec96ca0ead3a5f9180.idx
+./.git/objects/pack/pack-f8030eae927882d74c92e9ec96ca0ead3a5f9180.pack
+./.git/packed-refs
+./.git/refs/heads/main
+./.git/refs/remotes/origin/HEAD
+./.git/refs/remotes/origin/main
+./.git/refs/stash
+./command-line/7-CONCEPTS.md
+./command-line/7-mini-retro.txt
+./command-line/7-processes.txt
+./command-line/8-CONCEPTS.md
+./command-line/8-mini-retro.txt
+./command-line/8-redirection.txt
+./python/functions_and_branching/CONCEPTS.md
+./python/functions_and_branching/build_polynomial_from_product.py
+./python/functions_and_branching/calculate_gaussian.py
+./python/functions_and_branching/compute_heaviside.py
+./python/functions_and_branching/convert_celsius_temperature_to_fahrenheit.py
+./python/functions_and_branching/sort_stars_data.py
+./python/loops_and_lists/CONCEPTS.md
+./python/loops_and_lists/calculate_vertical_projectile_with_nested_lists.py
+./python/loops_and_lists/generate_coordinate_grid.py
+./python/loops_and_lists/sum_integer_reciprocals_using_while.py
+./python/loops_and_lists/sum_integers.py
+./python/loops_and_lists/table_temperature_conversion_and_approximation.py
+./python/loops_and_lists/table_temperature_conversion_with_while.py
+./python/loops_and_lists/table_vertical_projectile_positions.py
+./python/loops_and_lists/table_vertical_projectile_with_lists.py
+./python/matrices/fifth_eigenvector.py
+./python/matrices/tenth_eigenvector.py
+./python/project/final_feedback.txt
+./python/project/planet_stencils.py
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22 # cd python
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/python # touch test1.py test2.py
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/python # vi test1.py
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/python # vi test2.py
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/python # grep "import numpy" *.py
+test1.py:import numpy as np
+test2.py:import numpy as np
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/python # find . -name "*.py" | xargs grep "import numpy"
+./3d_visualization/ball.py:import numpy as np
+./3d_visualization/birthday_station.py:import numpy as np
+./3d_visualization/birthday_vector.py:import numpy as np
+./3d_visualization/two_balls_bounce.py:import numpy as np
+./3d_visualization/two_balls_cross.py:import numpy as np
+./dictionaries_and_strings/make_hertzsprung_russell_diagram.py:import numpy as np
+    
+./matrices/fifth_eigenvector.py:import numpy as np
+./matrices/tenth_eigenvector.py:import numpy as np
+./project/planet_stencils.py:#   import numpy as np
+./test2.py:import numpy as np
+./test1.py:import numpy as np
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/python # 
+(venv) root@deepnote:~/work/scientific_programming_schultzmatthew22/python # rm test1.py test2.py
