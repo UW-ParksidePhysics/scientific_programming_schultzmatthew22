@@ -1,1 +1,99 @@
+(venv) root@deepnote:~/work # ps
+    PID TTY          TIME CMD
+    700 pts/2    00:00:00 bash
+    709 pts/2    00:00:00 ps
+(venv) root@deepnote:~/work # ps -e
+    PID TTY          TIME CMD
+      1 ?        00:00:00 python
+     20 ?        00:00:00 sh
+     24 ?        00:00:06 python
+     26 ?        00:00:00 sh
+     29 ?        00:00:00 python
+     30 ?        00:00:00 sh
+     33 ?        00:00:00 python
+     34 ?        00:00:00 sh
+     37 ?        00:00:00 python
+    521 ?        00:00:01 python
+    559 ?        00:00:00 vi
+    664 ?        00:00:00 vi
+    689 pts/0    00:00:00 bash
+    695 pts/0    00:00:00 vi
+    700 pts/2    00:00:00 bash
+    724 pts/2    00:00:00 ps
+(venv) root@deepnote:~/work # kill [695]
+bash: kill: [695]: arguments must be process or job IDs
+(venv) root@deepnote:~/work # ps -a
+    PID TTY          TIME CMD
+    695 pts/0    00:00:00 vi
+    739 pts/2    00:00:00 ps
+(venv) root@deepnote:~/work # kill 695
+(venv) root@deepnote:~/work # sleep 100 &
+[1] 756
+(venv) root@deepnote:~/work # jobs
+[1]+  Running                 sleep 100 &
+(venv) root@deepnote:~/work # fg
+sleep 100
 
+
+Challenge: 
+
+top - 06:28:38 up 23:05,  0 user,  load average: 1.18, 0.75, 0.79
+Tasks:  16 total,   1 running,  14 sleeping,   0 stopped,   1 zombie
+%Cpu(s):  9.1 us,  4.0 sy,  0.0 ni, 86.7 id,  0.1 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  64184.2 total,  42925.5 free,  10706.4 used,  11358.8 buff/cache     
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.  53477.8 avail Mem 
+Send pid 855 signal [15/sigterm] 
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                                                                                 
+     24 root      20   0  309884  79232  17732 S   0.3   0.1   0:07.98 python                                                                                                                                                  
+      1 root      20   0  641568  41636  14092 S   0.0   0.1   0:00.66 python                                                                                                                                                  
+     20 root      20   0    2592   1688   1560 S   0.0   0.0   0:00.00 sh                                                                                                                                                      
+     26 root      20   0    2592   1748   1624 S   0.0   0.0   0:00.00 sh                                                                                                                                                      
+     29 root      20   0  910456 105276  48492 S   0.0   0.2   0:00.66 python                                                                                                                                                  
+     30 root      20   0    2592   1688   1564 S   0.0   0.0   0:00.00 sh                                                                                                                                                      
+     33 root      20   0  179664  23876  10708 S   0.0   0.0   0:00.33 python                                                                                                                                                  
+     34 root      20   0    2592   1748   1624 S   0.0   0.0   0:00.00 sh                                                                                                                                                      
+     37 root      20   0  104916  22740  10076 S   0.0   0.0   0:00.38 python                                                                                                                                                  
+    521 root      20   0 1954556 233916 101276 S   0.0   0.4   0:01.26 python                                                                                                                                                  
+    559 root      20   0       0      0      0 Z   0.0   0.0   0:00.02 vi                                                                                                                                                      
+    664 root      20   0   14604   9792   6044 S   0.0   0.0   0:00.00 vi                                                                                                                                                      
+    689 root      20   0    7212   3964   3384 S   0.0   0.0   0:00.00 bash                                                                                                                                                    
+    700 root      20   0    7212   3952   3360 S   0.0   0.0   0:00.01 bash                                                                                                                                                    
+    769 root      20   0    7728   4480   3364 S   0.0   0.0   0:00.01 bash                                                                                                                                                    
+    855 root      20   0   11684   5420   3244 R   0.0   0.0   0:00.01 top                                                                                                                                                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1]+  Terminated              sleep 500
+(venv) root@deepnote:~/work # q

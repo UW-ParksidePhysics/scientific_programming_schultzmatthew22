@@ -1,17 +1,17 @@
-Partner:
+Partner: Myself
 
 What Went Well
 ---
-
+The challenge went well but I kept messing up the practice for a while
 
 What Would Make Next Time 1% Better
 ---
-* Focus:
+* Focus: Focusing more would help limit my mistakes
 
-* Communication:
+* Communication: Was good
 
-* Pacing:
+* Pacing: I paced myself too fast and I made mistakes
 
-* Division of responsibility
+* Division of responsibility: Worked by myself. Would be easier with partner for pacing and focus reasons.
 
-* Code quality:
+* Code quality: It was decent I think

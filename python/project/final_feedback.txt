@@ -1,0 +1,4 @@
+- Why did you need to use Turtle?
+- Revise output to include just outline of circle, name, and astronomical symbol
+- Use the width of a standard piece of paper to choose the scale of the planet diameter 
+- Include a check on the smallest size (> 2mm diameter)

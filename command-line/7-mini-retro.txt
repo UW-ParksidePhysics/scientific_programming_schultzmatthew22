@@ -1,17 +1,17 @@
-Partner:
+Partner: Myself
 
 What Went Well
 ---
-
+The first practice went well but challenge had difficulties
 
 What Would Make Next Time 1% Better
 ---
-* Focus:
+* Focus: Focus was good
 
-* Communication:
+* Communication: Couple of problems, ps wasn't showing the 2nd terminals vi so I used ps -a and it worked.
 
-* Pacing:
+* Pacing: Pacing was good
 
-* Division of responsibility
+* Division of responsibility: Would probably be better with a partner
 
-* Code quality:
+* Code quality: Not the greatest

@@ -1,1 +1,23 @@
 
+(venv) root@deepnote:~/work # vi text.txt
+
+[1]+  Stopped                 vi text.txt
+(venv) root@deepnote:~/work # vi text.txt
+
+[2]+  Stopped                 vi text.txt
+(venv) root@deepnote:~/work # vi text.txt
+
+[3]+  Stopped                 vi text.txt
+(venv) root@deepnote:~/work # vi text.txt
+(venv) root@deepnote:~/work # vi test.py
+(venv) root@deepnote:~/work # cat test.py
+def calculate_area(r):
+    pi = 3.14
+    area = pi * (r ** 2)
+    print(f"The area is: {area}")
+
+if __name__ == "__main__":
+    calculate_area(5)
+(venv) root@deepnote:~/work # python test.py
+The area is: 78.5
+(venv) root@deepnote:~/work # 

@@ -1,1 +1,18 @@
+(venv) root@deepnote:~/work # echo "Welcome to Lesson 8!" > greeting.txt
+(venv) root@deepnote:~/work # echo "Let's learn about redirection." >> greeting.txt
+(venv) root@deepnote:~/work # cat greeting.txt
+Welcome to Lesson 8!
+Let's learn about redirection.
+(venv) root@deepnote:~/work # rm greeting.txt
+(venv) root@deepnote:~/work # echo "File 1" > list.txt
+(venv) root@deepnote:~/work # echo "File 2" >> list.txt
+(venv) root@deepnote:~/work # rm list.txt
+(venv) root@deepnote:~/work # echo "Lorem ipsum dolor sit amet, consectetur adipiscing elit." > data.txt
+(venv) root@deepnote:~/work # wc -w data.txt > word_count.txt
+(venv) root@deepnote:~/work # cat word_count.txt
+8 data.txt
+(venv) root@deepnote:~/work # ls > directory_list.txt
+(venv) root@deepnote:~/work # date >> directory_list.txt
+(venv) root@deepnote:~/work # rm data.txt word_count.txt directory_list.txt
+(venv) root@deepnote:~/work # 
 

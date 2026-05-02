@@ -109,6 +109,7 @@
 #
 # Keep plotting separate from physics/math wherever practical.
 
+<<<<<<< Updated upstream:python/project/project.py
 import turtle
 
 import matplotlib.pyplot as plt
@@ -225,3 +226,20 @@ if __name__ == "__main__":
     turtle.getscreen()
     show_comparison_graphs(matrix)
     draw_turtle_stencil(matrix)
+=======
+
+def plot_stencil():
+    return
+
+
+def main() -> None:
+    """Run the simulation and display/save results."""
+    # 1) Define simulation parameters (with units)
+    # 2) Compute derived parameters
+    # 3) Call read_data / simulate / build_figure
+    plot_stencil()
+    # 4) Show or save outputs
+
+if __name__ == "__main__":
+    main()
+>>>>>>> Stashed changes:python/project/planet_stencils.py

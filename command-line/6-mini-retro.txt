@@ -1,17 +1,17 @@
-Partner:
+Partner: Myself
 
 What Went Well
 ---
-
+The practice portion went well
 
 What Would Make Next Time 1% Better
 ---
-* Focus:
+* Focus: Focus was good
 
-* Communication:
+* Communication: Easy to understand the problem it was communicated well
 
-* Pacing:
+* Pacing: I paced myself well
 
-* Division of responsibility
+* Division of responsibility: Would be easier with a partner
 
-* Code quality:
+* Code quality: Code quality was okay
