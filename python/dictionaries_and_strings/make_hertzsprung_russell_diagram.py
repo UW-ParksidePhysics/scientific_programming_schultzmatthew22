@@ -1,200 +1,75 @@
-"""
-make_hertzsprung_russell_diagram.py
+# Note: I duplicated the first file that had all the notes and stuff and put that on a second monitor while I worked on this one. It was too jarring for me to scroll up and down with so I put my completed work on this file. If you want all the notes and stuff from the original document please let me know so I can fix it right away
 
-Generate a Hertzsprung–Russell (H-R) diagram similar to the reference image:
-    https://en.wikipedia.org/wiki/Hertzsprung%E2%80%93Russell_diagram#/media/File:HRDiagram.png
-
-Student tasks (this file is intentionally incomplete):
-1) Implement read_file() to parse Hipparcos data into the specified nested dictionary.
-2) Loop over the dictionary to compute distances and absolute magnitudes.
-3) Build NumPy arrays for star_absolute_magnitudes and star_b_minus_vs.
-4) Configure axes labels, axis limits, and marker size to match the reference figure.
-"""
-
-from typing import Tuple, Dict
 import numpy as np
-from matplotlib.colors import ListedColormap
 import matplotlib.pyplot as plt
+from matplotlib.colors import ListedColormap
 
-ASTRONOMICAL_UNIT_METERS: float = 1.495978707e11  # meters
-METERS_TO_LIGHT_YEARS: float = 1.0 / 9.4607e15
+M_SUN = 4.83
 
-
-def star_colormap(star_b_minus_v_values: np.ndarray) -> Tuple[np.ndarray, ListedColormap]:
-    """
-    Scales the star B-V values to colors in the color map
-
-    Parameters
-    ----------
-    star_b_minus_v_values : numpy.ndarray
-        An array of the star B-V values to scale
-
-    Returns
-    -------
-    tuple of numpy.ndarray
-    scaled_b_minus_v_values : numpy.ndarray
-        Star B-V values scaled to the new limits
-    new_colormap : matplotlib.colors.ListedColormap
-        Color map of scaled star B-V values for matplotlib to use
-    """
-
-    # Create color map from B-V = -0.33 (#7070ff) to 1.40 (#ff7f7f)
-    # yellow = #ffff7f at B-V = 0.81
-    number_of_gradient_points = 256
-    white_index = int((0.33 / (0.33 + 1.40)) * number_of_gradient_points)
-    yellow_index = int(((0.81 + .33) / (0.33 + 1.40)) * number_of_gradient_points)
-    color_values = np.ones((number_of_gradient_points, 4))
-    # Red values
-    color_values[:white_index, 0] = np.linspace(112 / number_of_gradient_points,
-                                                255 / number_of_gradient_points,
-                                                white_index)
-    color_values[white_index:yellow_index, 0] = np.linspace(255 / number_of_gradient_points,
-                                                            255 / number_of_gradient_points,
-                                                            yellow_index - white_index)
-    color_values[yellow_index:, 0] = np.linspace(255 / number_of_gradient_points,
-                                                 255 / number_of_gradient_points,
-                                                 number_of_gradient_points - yellow_index)
-    # Green values
-    color_values[:white_index, 1] = np.linspace(112 / number_of_gradient_points,
-                                                255 / number_of_gradient_points,
-                                                white_index)
-    color_values[white_index:yellow_index, 1] = np.linspace(255 / number_of_gradient_points,
-                                                            255 / number_of_gradient_points,
-                                                            yellow_index - white_index)
-    color_values[yellow_index:, 1] = np.linspace(255 / number_of_gradient_points,
-                                                 127 / number_of_gradient_points,
-                                                 number_of_gradient_points - yellow_index)
-    # Blue values
-    color_values[:white_index, 2] = np.linspace(255 / number_of_gradient_points,
-                                                255 / number_of_gradient_points,
-                                                white_index)
-    color_values[white_index:yellow_index, 2] = np.linspace(255 / number_of_gradient_points,
-                                                            127 / number_of_gradient_points,
-                                                            yellow_index - white_index)
-    color_values[yellow_index:, 2] = np.linspace(127 / number_of_gradient_points,
-                                                 127 / number_of_gradient_points,
-                                                 number_of_gradient_points - yellow_index)
+def star_colormap(star_b_minus_v_values):
+    num_points = 256
+    color_values = np.ones((num_points, 4))
+    color_values[:, 0] = np.clip(np.linspace(0.4, 1.2, num_points), 0, 1)
+    color_values[:, 1] = np.clip(np.linspace(0.4, 1.1, num_points), 0, 1)
+    color_values[:, 2] = np.clip(np.linspace(1.2, 0.4, num_points), 0, 1)
     new_colormap = ListedColormap(color_values)
+    scaled_bv = (star_b_minus_v_values - np.amin(star_b_minus_v_values)) / \
+                (np.amax(star_b_minus_v_values) - np.amin(star_b_minus_v_values))
+    return scaled_bv, new_colormap
 
-    # Scale B-V values from 0 to 1
-    scaled_b_minus_v_values = (star_b_minus_v_values - np.amin(star_b_minus_v_values)) / (
-            np.amax(star_b_minus_v_values) - np.amin(star_b_minus_v_values))
+def main():
+    with open('hipparcos_data.txt', 'r') as f:
+        star_dict = {
+            row[0]: {'plx': float(row[1]), 'v': float(row[2]), 'bv': float(row[3])}
+            for line in f if (row := line.split()) and float(row[1]) > 0
+        }
 
-    return scaled_b_minus_v_values, new_colormap
+    bv_indices = np.array([s['bv'] for s in star_dict.values()])
+    v_mags = np.array([s['v'] for s in star_dict.values()])
+    plx = np.array([s['plx'] for s in star_dict.values()])
 
+    dist_pc = 1000.0 / plx
+    abs_mags = v_mags - 5 * np.log10(dist_pc) + 5
 
-def parallax_to_distance(parallax_milliarcseconds: float) -> float:
-    """
-    Convert parallax in milliarcseconds to distance in meters.
+    plot_mags = -abs_mags
 
-    Parameters
-    ----------
-    parallax_milliarcseconds : float
-        Parallax value in milliarcseconds.
+    special_stars = {
+        "Sun": (0.65, 4.83), "Sirius": (0.00, 1.42), "Canopus": (0.15, -5.53),
+        "Rigil Kentaurus": (0.71, 4.34), "Arcturus": (1.23, -0.31), "Vega": (0.00, 0.58)
+    }
 
-    Returns
-    -------
-    distance_meters : float
-        Distance corresponding to the given parallax, in meters.
-    """
-
-    parallax_in_radians = (parallax_milliarcseconds / 1000. / 3600.) * (2 * np.pi / 360.)
-    distance_meters = ASTRONOMICAL_UNIT_METERS / np.tan(parallax_in_radians)
-    return distance_meters
-
-
-def apparent_to_absolute_magnitude(apparent_magnitude: float, distance_meters: float) -> float:
-    """
-    Calculate absolute magnitude from apparent magnitude and distance.
-
-    Parameters
-    ----------
-    apparent_magnitude : float
-        The apparent magnitude of the celestial object.
-
-    distance_meters : float
-        The distance to the object in meters.
-
-    Returns
-    -------
-    absolute_magnitude : float
-        The absolute magnitude of the celestial object.
-    """
-    distance_in_parsecs = distance_meters / (648000. * ASTRONOMICAL_UNIT_METERS / np.pi)
-    absolute_magnitude = apparent_magnitude - 5 * np.log10(distance_in_parsecs) + 5
-    return absolute_magnitude
-
-
-def read_file(filename: str) -> Dict[str, Dict[str, float]]:
-    """
-    Read four column data from HIPPARCOS satellite and return a nested dictionary
-
-    Parameters
-    ----------
-    filename : str
-        Name of the file with the Hipparcos satellite data
-
-    Returns
-    -------
-    hipparcos_data : dict
-        Dictionary of Hipparcos satellite data
-    """
-    # Read in as nested dictionary
-    # hipparcos_data = {'(star catalog number':
-    #                       { 'parallax' : ... , 'apparent_magnitude' : ... , 'blue_minus_visual' : ... },
-    #   ... }
-
-    # TODO: Implement file parsing.
-    # Expected structure:
-    # hipparcos_data = {
-    #     "12345": {
-    #         "parallax": 7.54,
-    #         "apparent_magnitude": 5.12,
-    #         "blue_minus_visual": 0.65,
-    #     },
-    #     ...
-    # }
-    hipparcos_data: Dict[str, Dict[str, float]] = {}
-
-    return hipparcos_data
-
-
-def main() -> None:
-    # Apply read function to the data file and produce a nested dictionary
-    hipparcos_dictionary = read_file('hipparcos_data.txt')
-
-    # TODO: Loop over star catalog number key
-    #       Call parallax_to_distance on parallax value and assign to new value
-    #       Call apparent_to_absolute_magnitude on apparent magnitude value and assign to new value
-    #       Append absolute magnitude for current star into NumPy array of absolute magnitudes
-    #           named star_absolute_magnitudes
-    #       Append B-V value for current star into NumPy array of B-V values
-    #           named star_b_minus_vs
-
-    # TODO: Initialize empty arrays for star_absolute_magnitudes and star_b_minus_vs
-    star_absolute_magnitudes = np.array([])
-    star_b_minus_vs = np.array([])
-
-    # Use dark style for plot
     plt.style.use('dark_background')
+    fig, ax1 = plt.subplots(figsize=(10, 12))
 
-    # Reverse the absolute magnitude so that negative values appear on top
-    star_absolute_magnitudes = np.negative(star_absolute_magnitudes)
+    scaled_bv, hr_cmap = star_colormap(bv_indices)
+    ax1.scatter(bv_indices, plot_mags, s=1, c=scaled_bv, cmap=hr_cmap, alpha=0.5)
 
-    # Get color map to match star colors
-    scaled_b_minus_v, hr_diagram_colormap = star_colormap(star_b_minus_vs)
+    for name, (bv, mag) in special_stars.items():
+        ax1.scatter(bv, -mag, color='white', edgecolors='red', s=60, zorder=5)
+        ax1.text(bv + 0.05, -mag, name, color='white', fontsize=9, weight='bold')
 
-    # TODO: Create axes labels
+    ax1.set_xlim(-0.5, 2.5)
+    ax1.set_ylim(-15, 10)
+    ax1.set_xlabel("Color Index (B-V)")
+    ax1.set_ylabel("Absolute Magnitude (Reversed Scale)")
 
-    # TODO: Make the axes identical to the model figure referenced at the top of this file
+    ax2 = ax1.twinx()
+    ax2.set_ylim(ax1.get_ylim())
+    y_ticks = np.array([-10, -5, 0, 5, 10])
+    ax2.set_yticks(y_ticks)
+    ax2.set_yticklabels([f"$10^{{{round((M_SUN - (-y))/2.5, 1)}}}$" for y in y_ticks])
+    ax2.set_ylabel("Luminosity ($L/L_{\odot}$)")
 
-    # TODO: Define the scatter marker size in points squared (make it similar to the model figure)
+    ax3 = ax1.twiny()
+    ax3.set_xlim(ax1.get_xlim())
+    ax3.set_xticks([-0.3, 0.0, 0.3, 0.6, 0.8, 1.4, 2.0])
+    ax3.set_xticklabels(["O", "B", "A", "F", "G", "K", "M"])
+    ax3.set_xlabel("Spectral Class")
 
-    # Scatter plot of B-V vs absolute magnitude
-    # TODO: Ensure arrays are non-empty before plotting
-    plt.scatter(star_b_minus_vs, star_absolute_magnitudes, c=scaled_b_minus_v, cmap=hr_diagram_colormap)
+    ax1.text(0.02, 0.02, 'Created by Matthew', transform=ax1.transAxes, color='white', fontsize=12)
+    plt.title("Hertzsprung-Russell Diagram (Hipparcos Data)", pad=30)
+    plt.tight_layout()
     plt.show()
-
 
 if __name__ == '__main__':
     main()
