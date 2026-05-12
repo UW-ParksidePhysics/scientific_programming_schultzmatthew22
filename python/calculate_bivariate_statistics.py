@@ -22,3 +22,4 @@ if __name__ == "__main__":
     data_test = np.array([x_test, x_test ** 2])
     stats_out = calculate_bivariate_statistics(data_test)
     print(f"Bivariate Statistics (Mean Y, Std Y, Min X, Max X, Min Y, Max Y):\n{stats_out}")
+#

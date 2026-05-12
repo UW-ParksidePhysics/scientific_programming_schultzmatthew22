@@ -16,3 +16,4 @@ if __name__ == "__main__":
     fit = np.array([np.linspace(-2, 2), np.linspace(-2, 2) ** 2])
     plot_data_with_fit(data, fit, data_format='x', fit_format='--')
     plt.show()
+#

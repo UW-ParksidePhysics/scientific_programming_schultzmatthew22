@@ -16,3 +16,4 @@ if __name__ == "__main__":
     data_test = np.array([x_test, x_test ** 2])
     coeffs = calculate_quadratic_fit(data_test)
     print(f"Quadratic Coefficients (c0, c1, c2): {coeffs}")
+#

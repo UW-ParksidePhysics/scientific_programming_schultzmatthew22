@@ -1,7 +1,6 @@
 import numpy as np
 from numpy.polynomial import Polynomial
 
-
 def fit_curve_array(quadratic_coefficients, minimum_x, maximum_x, number_of_points=100):
 
     if maximum_x < minimum_x:
@@ -19,3 +18,4 @@ def fit_curve_array(quadratic_coefficients, minimum_x, maximum_x, number_of_poin
 if __name__ == "__main__":
     curve = fit_curve_array([0, 0, 1], -2, 2)
     print(f"Fit Curve Sample (last 3 points):\n{curve[:, -3:]}")
+#

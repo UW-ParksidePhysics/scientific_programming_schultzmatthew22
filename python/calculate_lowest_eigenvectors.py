@@ -24,3 +24,4 @@ if __name__ == "__main__":
     vals, vecs = calculate_lowest_eigenvectors(mat, 2)
     print(f"Lowest Eigenvalues: {vals}")
     print(f"Corresponding Eigenvectors:\n{vecs}")
+#

@@ -26,3 +26,4 @@ At this moment there are no changes that I am going to exclude from the finished
 size of 2mm will result in the total size of all the planets to exceed the maximum size limiter of 279.4mm or not. If it does,
 I will not be including that change as I feel that making it fit is more important. While I could make it a minimum of 2mm no matter
 what the scaling factor is, I feel like that would not accurately accomplish the project as it is supposed to be an accurate scale.
+ 

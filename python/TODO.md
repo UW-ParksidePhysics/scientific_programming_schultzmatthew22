@@ -19,4 +19,4 @@
 I dont think there is anything I need to change regarding this, It reproduces easily and can be changed easily as well.
 
 ## Code Readability and Standards
-- [ ] Add notes to the code to help explain the code better
+- [ ] Add notes to the code to help explain the code better 

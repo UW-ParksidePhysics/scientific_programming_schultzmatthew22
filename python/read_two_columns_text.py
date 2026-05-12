@@ -16,3 +16,4 @@ if __name__ == "__main__":
         print(f'{data=}, shape={data.shape}')
     except OSError as e:
         print(f"Error: {e}")
+#
