@@ -109,137 +109,73 @@
 #
 # Keep plotting separate from physics/math wherever practical.
 
-<<<<<<< Updated upstream:python/project/project.py
-import turtle
-
+#<<<<<<< Updated upstream:python/project/project.py
 import matplotlib.pyplot as plt
+import matplotlib.patches as patches
 
-# Constants
 R_KM = {
-    "Mercury": 2440,
-    "Venus": 6052,
-    "Earth": 6371,
-    "Mars": 3390,
-    "Jupiter": 69911,
-    "Saturn": 58232,
-    "Uranus": 25362,
-    "Neptune": 24622,
+    "Mercury": 2440, "Venus": 6052, "Earth": 6371, "Mars": 3390,
+    "Jupiter": 69911, "Saturn": 58232, "Uranus": 25362, "Neptune": 24622,
 }
 
-DESIRED_MAX_DIAMETER_MM = 220
-K = DESIRED_MAX_DIAMETER_MM / (2 * R_KM["Jupiter"])
+SYMBOLS = {
+    "Mercury": "☿", "Venus": "♀", "Earth": "⊕", "Mars": "♂",
+    "Jupiter": "♃", "Saturn": "♄", "Uranus": "⛢", "Neptune": "♆"
+}
+
+PAPER_WIDTH_MM = 200
+SCALE_K = PAPER_WIDTH_MM / (2 * R_KM["Jupiter"])
+MIN_DIAMETER_MM = 2.0
 
 
-def generate_data_matrix():
-    data_matrix = []
-    current_x = -550.0
-    y_pos = 0.0
-    buffer = 45
+def generate_and_draw_stencil():
+    fig, ax = plt.subplots(figsize=(15, 5))
 
-    planet_names = list(R_KM.keys())
+    ax.set_aspect('equal')
+    ax.axis('off')
 
-    for i, name in enumerate(planet_names):
-        r_km = R_KM[name]
-        r_scaled_mm = r_km * K
+    current_x = 0.0
+    buffer = 35
+
+    prev_x = 0.0
+    prev_r = 0.0
+
+    for i, (name, r_km) in enumerate(R_KM.items()):
+        r_mm = r_km * SCALE_K
+
+        if (r_mm * 2) < MIN_DIAMETER_MM:
+            r_mm = MIN_DIAMETER_MM / 2
 
         if i == 0:
-            x_pos = current_x + r_scaled_mm
+            x_pos = current_x + r_mm
         else:
-            prev_r = data_matrix[i - 1][1]
-            prev_x = data_matrix[i - 1][2]
+            x_pos = prev_x + r_mm + prev_r + buffer
 
-            min_center_dist = r_scaled_mm + prev_r + buffer
-            x_pos = prev_x + min_center_dist
+        circle = patches.Circle((x_pos, 0), r_mm, fill=False, edgecolor='black', linewidth=1.5)
+        ax.add_patch(circle)
 
-        data_matrix.append([name, r_scaled_mm, x_pos, y_pos, r_km])
+        symbol = SYMBOLS[name]
+        label_y = r_mm + (10 if i % 2 == 0 else 35)
 
-    return data_matrix
+        ax.text(x_pos, label_y, f"{symbol} {name}",
+                horizontalalignment='center',
+                verticalalignment='bottom',
+                fontsize=12,
+                fontweight='bold')
 
+        prev_x = x_pos
+        prev_r = r_mm
 
-def show_comparison_graphs(matrix):
-    names = [row[0] for row in matrix]
-    r_km = [row[4] for row in matrix]
-    r_mm = [row[1] for row in matrix]
-
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
-
-    ax1.bar(names, r_km, color='#1565C0')
-    ax1.set_title("Radius in km")
-
-    ax2.bar(names, r_mm, color='#C62828')
-    ax2.set_title("Radius in mm (Scaled)")
-
+    ax.autoscale_view()
     plt.tight_layout()
-    plt.show(block=False)
-    plt.pause(0.1)
 
+    filename = "planetary_stencil_cut_file.svg"
+    plt.savefig(filename, format="svg")
+    print(f"Stencil successfully saved as '{filename}' in your folder.")
 
-def draw_turtle_stencil(matrix):
-    screen = turtle.Screen()
-    screen.setup(width=1300, height=700)
-    screen.bgcolor("white")
-
-    t = turtle.Turtle()
-    t.speed(0)
-    t.penup()
-
-    colors = [
-        "#9E9E9E", "#E3BB76", "#2E7D32", "#D32F2F",
-        "#EF6C00", "#F4E0AF", "#4DD0E1", "#1565C0"
-    ]
-
-    for i, row in enumerate(matrix):
-        name, r_mm, x, y, r_km = row
-
-        t.goto(x, y - r_mm)
-        t.pendown()
-        t.color(colors[i])
-        t.begin_fill()
-        t.circle(r_mm)
-        t.end_fill()
-        t.penup()
-
-        label_y = y + r_mm + (20 if i % 2 == 0 else 80)
-        t.goto(x, label_y)
-        t.color("black")
-        t.pendown()
-        t.goto(x, y + r_mm + 2)
-        t.penup()
-        t.goto(x, label_y)
-
-        # Wrapped string variables to adhere to line-length limits
-        label_text = f"{name}\nReal: {int(r_km):,} km\nStencil: {r_mm:.2f} mm"
-        t.write(
-            label_text,
-            align="center",
-            font=("Arial", 8, "bold")
-        )
-
-    t.hideturtle()
-    print("Stencil Complete. You can close the Plot and the Turtle window.")
-    turtle.done()
+    plt.show()
 
 
 if __name__ == "__main__":
-    matrix = generate_data_matrix()
-
-    turtle.getscreen()
-    show_comparison_graphs(matrix)
-    draw_turtle_stencil(matrix)
-=======
-
-def plot_stencil():
-    return
-
-
-def main() -> None:
-    """Run the simulation and display/save results."""
-    # 1) Define simulation parameters (with units)
-    # 2) Compute derived parameters
-    # 3) Call read_data / simulate / build_figure
-    plot_stencil()
-    # 4) Show or save outputs
-
-if __name__ == "__main__":
-    main()
->>>>>>> Stashed changes:python/project/planet_stencils.py
+    generate_and_draw_stencil()
+#>>>>>>> Stashed changes:python/project/planet_stencils.py
